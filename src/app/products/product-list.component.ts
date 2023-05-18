@@ -34,7 +34,7 @@ export class ProductListComponent {
   private categorySelectedSubject = new Subject<number>();
   private categorySelectedAction$ = this.categorySelectedSubject.asObservable();
 
-  // combine products$ & categorySelectedAction to react to actions
+  // combine products$ data stream & categorySelectedAction to react to actions
   productsSimpleFilter$ = combineLatest([
     this.products$,
     this.categorySelectedAction$.pipe(
